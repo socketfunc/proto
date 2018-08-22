@@ -10,6 +10,7 @@ import "store/update.proto";
 
 service RuntimeService {
     rpc Stream (stream Receive) returns (stream Send) {}
+    rpc Healthz (HealthzRequest) returns (HealthzResponse) {}
 }
 
 enum Cmd {
@@ -61,3 +62,7 @@ message StoreResponse {
     bool success = 2;
     store.Entity entity = 3;
 }
+
+message HealthzRequest {}
+
+message HealthzResponse {}
