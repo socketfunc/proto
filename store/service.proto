@@ -22,7 +22,7 @@ message GetRequest {
 }
 
 message GetResponse {
-    Value value = 1;
+    Entity entity = 1;
 }
 
 message PutRequest {
