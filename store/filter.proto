@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package store;
 
+import "store/value.proto";
+
 option go_package = "github.com/socketfunc/proto/store";
 
 message Filter {
@@ -17,4 +19,5 @@ message Filter {
 
     Comp comp = 1;
     string name = 2;
+    Value value = 3;
 }

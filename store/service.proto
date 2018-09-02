@@ -12,7 +12,7 @@ service StoreService {
     rpc Put (PutRequest) returns (PutResponse) {}
     rpc Modify (ModifyRequest) returns (ModifyResponse) {}
     rpc Del (DelRequest) returns (DelResponse) {}
-    rpc DelAll (DelRequest) returns (DelRequest) {}
+    rpc DelAll (DelRequest) returns (DelResponse) {}
     rpc Keys (KeysRequest) returns (KeysResponse) {}
 }
 
