@@ -6,6 +6,7 @@ option go_package = "github.com/socketfunc/proto/store";
 
 import "store/value.proto";
 import "store/filter.proto";
+import "store/update.proto";
 
 service StoreService {
     rpc Get (GetRequest) returns (GetResponse) {}
@@ -39,6 +40,7 @@ message ModifyRequest {
     string namespace = 1;
     string key = 2;
     repeated Filter filters = 3;
+    repeated Update Updates = 4;
 }
 
 message ModifyResponse {
