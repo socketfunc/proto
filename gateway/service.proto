@@ -8,9 +8,10 @@ import "packet/packet.proto";
 
 service GatewayService {
     rpc Publish (PublishRequest) returns (PublishResponse) {}
-    rpc Subscribe (SubscribeRequest) returns (stream SubscribeSend) {}
+    rpc Subscribe (SubscribeRequest) returns (SubscribeResponse) {}
     rpc Unsubscribe (UnsubscribeRequest) returns (UnsubscribeResponse) {}
     rpc Disconnect(DisconnectRequest) returns (DisconnectResponse) {}
+    rpc Stream(StreamRequest) returns (StreamPayload) {}
     rpc Ping (stream PingRequest) returns (stream PingResponse) {}
 }
 
@@ -25,9 +26,7 @@ message SubscribeRequest {
     string topic = 2;
 }
 
-message SubscribeSend {
-    packet.Packet packet = 1;
-}
+message SubscribeResponse {}
 
 message UnsubscribeRequest {
     string id = 1;
@@ -41,6 +40,12 @@ message DisconnectRequest {
 }
 
 message DisconnectResponse {}
+
+message StreamRequest {}
+
+message StreamPayload {
+    packet.Packet packet = 1;
+}
 
 message PingRequest {}
 
