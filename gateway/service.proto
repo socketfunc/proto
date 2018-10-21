@@ -11,7 +11,7 @@ service GatewayService {
     rpc Subscribe (SubscribeRequest) returns (SubscribeResponse) {}
     rpc Unsubscribe (UnsubscribeRequest) returns (UnsubscribeResponse) {}
     rpc Disconnect(DisconnectRequest) returns (DisconnectResponse) {}
-    rpc Stream(StreamRequest) returns (StreamPayload) {}
+    rpc Stream(StreamRequest) returns (stream StreamPayload) {}
     rpc Ping (stream PingRequest) returns (stream PingResponse) {}
 }
 
