@@ -41,7 +41,9 @@ message DisconnectRequest {
 
 message DisconnectResponse {}
 
-message StreamRequest {}
+message StreamRequest {
+    string conn_id = 1;
+}
 
 message StreamPayload {
     packet.Packet packet = 1;
